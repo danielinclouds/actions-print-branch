@@ -1,0 +1,25 @@
+name: Print Branch
+
+on:
+  pull_request:
+    types: 
+      - opened
+      - reopened
+      - synchronize
+
+jobs:
+
+  build:
+    name: Print Branch
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Check out code 
+      uses: actions/checkout@v2
+
+    - name: Print name of pull request's base branch
+      run: |
+        echo "Pull request's base branch is: ${BASE_BRANCH}"
+      env:
+        BASE_BRANCH: ${{ github.base_ref }}
+      if: github.event_name == 'pull_request'
