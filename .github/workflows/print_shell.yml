@@ -18,7 +18,7 @@ jobs:
       run: echo "$SHELL"
       
     - name: Actor
-#      if: github.event.pusher.name == "danielinclouds"
+      if: github.event.pusher.name == "danielinclouds"
       env:
         ACTOR: ${{ github.actor }}
         PUSHER: ${{ github.event.pusher.name }}
