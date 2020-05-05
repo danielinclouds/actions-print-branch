@@ -16,3 +16,9 @@ jobs:
 
     - name: Print SHELL variable
       run: echo "$SHELL"
+      
+    - name: Actor
+      if: github.actor == danielinclouds
+      env:
+        ACTOR: ${{ github.actor }}
+      run: echo "$ACTOR"
