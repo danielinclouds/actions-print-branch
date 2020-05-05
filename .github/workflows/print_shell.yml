@@ -1,27 +1,27 @@
-name: Print Context
+# name: Print Context
 
-on:
-  push:
+# on:
+#   push:
     
 
-jobs:
+# jobs:
 
-  build:
-    name: Print Context
-    runs-on: ubuntu-latest
-    steps:
+#   build:
+#     name: Print Context
+#     runs-on: ubuntu-latest
+#     steps:
 
-    - name: Check out code 
-      uses: actions/checkout@v2
+#     - name: Check out code 
+#       uses: actions/checkout@v2
 
-    - name: Print SHELL variable
-      run: echo "$SHELL"
+#     - name: Print SHELL variable
+#       run: echo "$SHELL"
       
-    - name: Actor
-      if: github.event.pusher.name == "danielinclouds"
-      env:
-        ACTOR: ${{ github.actor }}
-        PUSHER: ${{ github.event.pusher.name }}
-      run: |
-        echo "$ACTOR"
-        echo "$PUSHER"
+#     - name: Actor
+#       if: github.event.pusher.name == "danielinclouds"
+#       env:
+#         ACTOR: ${{ github.actor }}
+#         PUSHER: ${{ github.event.pusher.name }}
+#       run: |
+#         echo "$ACTOR"
+#         echo "$PUSHER"

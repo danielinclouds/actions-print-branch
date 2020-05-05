@@ -1,0 +1,24 @@
+name: Compare user to actor
+
+on:
+  push:
+    
+
+jobs:
+
+  build:
+    name: Compare user to actor
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Check out code 
+      uses: actions/checkout@v2
+
+    - name: Actor
+      if: github.event.pusher.name == "my_username"
+      env:
+        ACTOR: ${{ github.actor }}
+        PUSHER: ${{ github.event.pusher.name }}
+      run: |
+        echo "$ACTOR"
+        echo "$PUSHER"
