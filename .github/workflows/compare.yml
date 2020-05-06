@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Actor
-      if: github.actor == 'my_username'
+      if: github.actor == 'danielinclouds'
       env:
         ACTOR: ${{ github.actor }}
         PUSHER: ${{ github.event.pusher.name }}
